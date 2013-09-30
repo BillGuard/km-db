@@ -1,3 +1,5 @@
+- This is a clone from https://github.com/HouseTrip/km-db
+
 The `km-db` gem should be useful to KissMetrics (KM) users.
 Its aim is to efficiently process data obtained with KM's "Data Export" feature.
 
