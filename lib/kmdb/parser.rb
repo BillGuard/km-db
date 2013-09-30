@@ -83,10 +83,15 @@ module KMDB
 
       begin
         data = JSON.parse(text)
-      rescue JSON::ParserError => e
-        log "Warning, JSON parse error in: #{text}"
-        raise e if @abort_on_error
-        return
+      rescue JSON::ParserError
+        log "Trying to fix invalid JSON"
+        begin
+          data = JSON.parse(text.gsub(/\\\d{3}/, '?'))
+        rescue JSON::ParserError => e
+          log "Warning, JSON parse error in: #{text}"
+          raise e if @abort_on_error
+          return
+        end
       end
 
       if data.nil?
