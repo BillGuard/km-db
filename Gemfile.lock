@@ -20,7 +20,7 @@ GEM
     oj (2.1.4)
     parallel (0.8.4)
     progressbar (0.21.0)
-    rake (10.1.0)
+    rake (13.0.1)
     rspec (2.4.0)
       rspec-core (~> 2.4.0)
       rspec-expectations (~> 2.4.0)
